@@ -16,7 +16,7 @@
         state: present
 
     - name: Start and enable Nginx
-      service:
+      systemd:
         name: nginx
         state: started
         enabled: yes
@@ -40,13 +40,7 @@
         group: www-data
         mode: "0755"
         recurse: yes
-    
-    - name: Enable nginx site
-      file:
-        src: /etc/nginx/sites-available/portfolio
-        dest: /etc/nginx/sites-enabled/portfolio
-        state: link
-    
+  
     - name: Deploy nginx config
       copy:
         src: nginx.conf
