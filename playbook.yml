@@ -45,7 +45,7 @@
       copy:
         src: nginx.conf
         dest: /etc/nginx/conf.d/portfolio.conf
-
+    
     - name: Test nginx config
       command: nginx -t
 
