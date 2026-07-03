@@ -1,0 +1,7 @@
+all:
+  children:
+    webservers:
+      hosts:
+        node1: 13.233.122.236
+        node2: 13.203.224.99
+    
