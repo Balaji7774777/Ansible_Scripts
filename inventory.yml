@@ -1,6 +1,6 @@
 all:
-  hosts:
-    webservers:
+  webservers:
+    hosts:
       node1:
         ansible_host: 15.206.66.75  
         ansible_python_interpreter: /usr/bin/python3
