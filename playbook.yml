@@ -28,7 +28,7 @@
 
     - name: Clone repository
       git:
-        repo: "{{ repo_url }}"
+        repo: https://github.com/Balaji7774777/Application_Samples.git
         dest: /home/ubuntu/Application_Samples
         version: main
         force: yes
