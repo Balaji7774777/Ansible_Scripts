@@ -36,30 +36,28 @@
     - name: node2 copy application files
       copy:
         src: /home/ubuntu/Application_Samples/Static_Applications/portfolio
-        dest: /var/www/portfolio
+        dest: /var/www
         remote_src: yes
       when: inventory_hostname == "node1"
 
     - name: node1 copy application files
       copy:
         src: /home/ubuntu/Application_Samples/Static_Applications_2/portfolio
-        dest: /var/www/portfolio
+        dest: /var/www
         remote_src: yes
       when: inventory_hostname == "node2"
-    
-    - name: Set ownership and permissions
-      file:
-        path: /var/www/portfolio
-        owner: www-data
-        group: www-data
-        mode: "0755"
-        recurse: yes
   
     - name: Deploy nginx config
       copy:
         src: nginx.conf
-        dest: /etc/nginx/conf.d/portfolio.conf
+        dest: /etc/nginx/sites-available/portfolio
     
+    - name: Deploy nginx config
+      file:
+        src: /etc/nginx/sites-available/portfolio
+        dest: /etc/nginx/sites-enabled/portfolio
+        state: link
+
     - name: Test nginx config
       command: nginx -t
 
