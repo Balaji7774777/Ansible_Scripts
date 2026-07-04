@@ -1,10 +1,9 @@
 all:
-  children:
-    hosts:
-      webservers:
-        node1:
-          ansible_host: 15.206.66.75  
-          ansible_python_interpreter: /usr/bin/python3
-        node2:
-          ansible_host: 13.233.58.233
-          ansible_python_interpreter: /usr/bin/python3
+  hosts:
+    webservers:
+      node1:
+        ansible_host: 15.206.66.75  
+        ansible_python_interpreter: /usr/bin/python3
+      node2:
+        ansible_host: 13.233.58.233
+        ansible_python_interpreter: /usr/bin/python3
