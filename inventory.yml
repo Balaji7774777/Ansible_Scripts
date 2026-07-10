@@ -3,8 +3,11 @@ all:
     webservers:
       hosts:
         node1:
-          ansible_host: 15.206.66.75  
+          ansible_host: 13.200.251.254
           ansible_python_interpreter: /usr/bin/python3
         node2:
-          ansible_host: 13.233.58.233
+          ansible_host: 65.2.172.55
+          ansible_python_interpreter: /usr/bin/python3
+        node3:
+          ansible_host: 13.234.111.99
           ansible_python_interpreter: /usr/bin/python3
