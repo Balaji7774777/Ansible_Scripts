@@ -8,11 +8,10 @@
       apt:
         update_cache: yes
 
-    - name: Install Nginx and Git
+    - name: Install Nginx
       apt:
         name:
           - nginx
-          - git
         state: present
 
     - name: Start and enable Nginx
